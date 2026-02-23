@@ -1,0 +1,97 @@
+.app-footer {
+  background-color: var(--bg-dark);
+  margin-top: auto;
+}
+
+.app-footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 24px;
+}
+
+.app-footer__top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 32px;
+}
+
+.app-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.app-footer__tagline {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 280px;
+}
+
+.app-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.app-footer__col-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.app-footer__link {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.app-footer__link:hover {
+  color: var(--accent);
+}
+
+.app-footer__info {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.app-footer__divider {
+  height: 1px;
+  background-color: var(--shadow-dark);
+  opacity: 0.4;
+  margin-bottom: 20px;
+}
+
+.app-footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-footer__copy {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.app-footer__credits {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .app-footer__top {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .app-footer__bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}

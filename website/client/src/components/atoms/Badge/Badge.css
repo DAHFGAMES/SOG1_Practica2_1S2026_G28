@@ -1,0 +1,26 @@
+.neu-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 20px;
+  background-color: var(--bg);
+  box-shadow: var(--neu-small);
+}
+
+.neu-badge--default {
+  color: var(--text-secondary);
+}
+
+.neu-badge--success {
+  color: var(--success);
+}
+
+.neu-badge--warning {
+  color: #e17055;
+}
+
+.neu-badge--danger {
+  color: var(--danger);
+}

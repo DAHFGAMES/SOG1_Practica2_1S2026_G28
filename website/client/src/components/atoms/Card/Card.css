@@ -1,0 +1,18 @@
+.neu-card {
+  border-radius: var(--radius);
+  background-color: var(--bg);
+  transition: box-shadow 0.3s ease;
+}
+
+.neu-card--flat {
+  box-shadow: var(--neu-flat);
+}
+
+.neu-card--pressed {
+  box-shadow: var(--neu-pressed);
+}
+
+.neu-card--convex {
+  box-shadow: var(--neu-convex);
+  background: linear-gradient(145deg, #e6ebf2, #d4d9e0);
+}

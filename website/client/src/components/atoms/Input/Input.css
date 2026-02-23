@@ -1,0 +1,45 @@
+.neu-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.neu-input-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding-left: 4px;
+}
+
+.neu-input {
+  border: none;
+  outline: none;
+  padding: 14px 18px;
+  font-size: 1rem;
+  font-family: var(--font-main);
+  border-radius: var(--radius);
+  background-color: var(--bg);
+  color: var(--text-primary);
+  box-shadow: var(--neu-pressed);
+  transition: box-shadow 0.2s ease;
+}
+
+.neu-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+.neu-input:focus {
+  box-shadow: var(--neu-pressed), 0 0 0 2px var(--accent-light);
+}
+
+.neu-input--error {
+  box-shadow: var(--neu-pressed), 0 0 0 2px var(--danger);
+}
+
+.neu-input-error {
+  font-size: 0.8rem;
+  color: var(--danger);
+  padding-left: 4px;
+}
