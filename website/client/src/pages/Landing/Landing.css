@@ -1,0 +1,253 @@
+/* Full-width landing — no max-width wrapper */
+.landing {
+  width: 100%;
+}
+
+/* ===== Hero — parallax ===== */
+.landing__hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/assets/01_grano.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.landing__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(59, 47, 47, 0.7) 0%,
+    rgba(59, 47, 47, 0.5) 100%
+  );
+}
+
+.landing__hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 24px;
+  max-width: 700px;
+}
+
+.landing__title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #fff;
+}
+
+.landing__subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  max-width: 540px;
+}
+
+.landing__hero-cta {
+  margin-top: 24px;
+  box-shadow: none !important;
+  background-color: var(--accent);
+  color: var(--bg);
+}
+
+.landing__hero-cta:hover {
+  background-color: var(--accent-hover);
+  box-shadow: none !important;
+}
+
+/* ===== Services ===== */
+.landing__services {
+  padding: 80px 24px;
+  background-color: var(--bg);
+}
+
+.landing__services-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.landing__section-title {
+  text-align: center;
+  margin-bottom: 48px;
+  font-size: 2rem;
+}
+
+.landing__services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.landing__service-card {
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.landing__service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
+}
+
+.landing__service-img-wrap {
+  height: 220px;
+  overflow: hidden;
+}
+
+.landing__service-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.landing__service-card:hover .landing__service-img-wrap img {
+  transform: scale(1.05);
+}
+
+.landing__service-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.landing__service-body h3 {
+  font-size: 1.2rem;
+}
+
+.landing__service-body p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ===== Features — parallax mid ===== */
+.landing__parallax-mid {
+  position: relative;
+  background-image: url('/assets/02_soluble.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 80px 24px;
+}
+
+.landing__parallax-mid-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(59, 47, 47, 0.75);
+}
+
+.landing__features-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.landing__features-content > h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.landing__features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.landing__feature {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  box-shadow: none;
+  background-color: var(--bg);
+}
+
+.landing__feature-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--bg);
+  box-shadow: var(--neu-flat);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.landing__feature h3 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.landing__feature p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ===== Bottom CTA ===== */
+.landing__bottom-cta {
+  padding: 80px 24px;
+  background-color: var(--bg);
+}
+
+.landing__bottom-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.landing__bottom-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.landing__bottom-card h2 {
+  font-size: 1.8rem;
+}
+
+.landing__bottom-card p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .landing__hero {
+    min-height: 70vh;
+    background-attachment: scroll;
+  }
+
+  .landing__title {
+    font-size: 2.2rem;
+  }
+
+  .landing__services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .landing__parallax-mid {
+    background-attachment: scroll;
+  }
+
+  .landing__features-grid {
+    grid-template-columns: 1fr;
+  }
+}

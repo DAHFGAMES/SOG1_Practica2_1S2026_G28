@@ -1,0 +1,102 @@
+:root {
+  /* Neumorphism base palette — coffee tones */
+  --bg: #e8e0d8;
+  --bg-dark: #d6cdc3;
+  --text-primary: #3b2f2f;
+  --text-secondary: #6b5b4f;
+  --accent: #6f4e37;
+  --accent-hover: #5a3d2b;
+  --accent-light: #a0826d;
+  --success: #5a7247;
+  --danger: #a94442;
+  --warning: #c9a84c;
+
+  /* Neumorphism shadows */
+  --shadow-light: #f5ede6;
+  --shadow-dark: #b8ad9f;
+  --neu-flat:
+    6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+  --neu-pressed:
+    inset 4px 4px 8px var(--shadow-dark),
+    inset -4px -4px 8px var(--shadow-light);
+  --neu-convex:
+    6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+  --neu-small:
+    3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light);
+
+  /* Typography */
+  --font-main: "Segoe UI", system-ui, -apple-system, sans-serif;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-lg: 24px;
+
+  font-family: var(--font-main);
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--text-primary);
+  background-color: var(--bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--accent-hover);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.8rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background-color: var(--accent-light);
+  color: white;
+}
