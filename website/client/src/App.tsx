@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import Header from './components/organisms/Header';
 import Footer from './components/organisms/Footer';
@@ -12,7 +12,7 @@ import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <CartProvider>
         <Header />
         <main style={{ flex: 1 }}>
@@ -28,7 +28,7 @@ function App() {
         </main>
         <Footer />
       </CartProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

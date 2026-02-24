@@ -5,9 +5,8 @@ import Input from '../../components/atoms/Input';
 import Button from '../../components/atoms/Button';
 import PaymentMethodSelector from '../../components/molecules/PaymentMethodSelector';
 import { useCart } from '../../context/CartContext';
+import { createOrder } from '../../services/orderService';
 import './Checkout.css';
-
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
 interface CheckoutForm {
   nombre: string;
@@ -70,7 +69,7 @@ export default function Checkout() {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
@@ -90,34 +89,12 @@ export default function Checkout() {
       total: totalPrice,
     };
 
-    try {
-      const res = await fetch(`${API_URL}/api/orders`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(orderPayload),
-      });
-
-      const data = await res.json();
-      clearCart();
-      navigate('/confirmacion', {
-        state: {
-          order: { ...orderPayload, id: data.id, fecha: data.fecha },
-        },
-      });
-    } catch {
-      clearCart();
-      navigate('/confirmacion', {
-        state: {
-          order: {
-            ...orderPayload,
-            id: 'LOCAL-' + Date.now(),
-            fecha: new Date().toISOString(),
-          },
-        },
-      });
-    } finally {
-      setSubmitting(false);
-    }
+    const order = createOrder(orderPayload);
+    clearCart();
+    navigate('/confirmacion', {
+      state: { order },
+    });
+    setSubmitting(false);
   };
 
   return (
