@@ -16,7 +16,7 @@
 - **Arquitectura:** Atomic Design (atoms → molecules → organisms → pages)
 
 ## Cómo ejecutar
-
+![alt text](image.png)
 ```bash
 # Backend
 cd server
