@@ -12,20 +12,21 @@
 ## Stack Técnico
 
 - **Frontend:** React 19 + TypeScript + Vite (neumorfismo CSS puro)
-- **Backend:** Express 5 (API REST para pedidos)
+- **Persistencia:** localStorage (sin backend)
 - **Arquitectura:** Atomic Design (atoms → molecules → organisms → pages)
+- **Deploy:** GitHub Pages (automático vía GitHub Actions)
 
-## Cómo ejecutar
+## Cómo ejecutar localmente
 
 ```bash
-# Backend
-cd server
-npm start
-
-# Frontend (en otra terminal)
 cd client
+npm install
 npm run dev
 ```
+
+## Deploy
+
+El sitio se despliega automáticamente a GitHub Pages al hacer push a la rama `main`.
 
 ## Credenciales del Dashboard
 
