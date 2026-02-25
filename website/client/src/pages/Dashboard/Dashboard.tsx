@@ -3,29 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import Card from '../../components/atoms/Card';
 import Button from '../../components/atoms/Button';
 import Badge from '../../components/atoms/Badge';
+import { fetchOrders, fetchStats, type OrderRecord, type Stats } from '../../services/orderService';
 import './Dashboard.css';
-
-interface OrderRecord {
-  id: string;
-  nombre: string;
-  telefono: string;
-  direccion: string;
-  cantidad: number;
-  metodoPago: string;
-  productoNombre: string;
-  precioUnitario: number;
-  total: number;
-  fecha: string;
-}
-
-interface Stats {
-  totalPedidos: number;
-  ingresoTotal: number;
-  productoMasPedido: string;
-  cantidadTotal: number;
-}
-
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
 const paymentLabels: Record<string, string> = {
   efectivo: 'Efectivo',
@@ -40,24 +19,9 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [ordersRes, statsRes] = await Promise.all([
-          fetch(`${API_URL}/api/orders`),
-          fetch(`${API_URL}/api/stats`),
-        ]);
-        const ordersData = await ordersRes.json();
-        const statsData = await statsRes.json();
-        setOrders(ordersData);
-        setStats(statsData);
-      } catch {
-        setOrders([]);
-        setStats(null);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
+    setOrders(fetchOrders());
+    setStats(fetchStats());
+    setLoading(false);
   }, []);
 
   const handleLogout = () => {

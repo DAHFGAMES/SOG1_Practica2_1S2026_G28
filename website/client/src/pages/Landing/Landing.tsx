@@ -32,7 +32,7 @@ export default function Landing() {
           <div className="landing__services-grid">
             <Card className="landing__service-card" padding="0px">
               <div className="landing__service-img-wrap">
-                <img src="/assets/01_soluble.jpeg" alt="Café Soluble" />
+                <img src={`${import.meta.env.BASE_URL}assets/01_soluble.jpeg`} alt="Café Soluble" />
               </div>
               <div className="landing__service-body">
                 <h3>Café Soluble</h3>
@@ -41,7 +41,7 @@ export default function Landing() {
             </Card>
             <Card className="landing__service-card" padding="0px">
               <div className="landing__service-img-wrap">
-                <img src="/assets/01_grano.webp" alt="Café en Grano" />
+                <img src={`${import.meta.env.BASE_URL}assets/01_grano.webp`} alt="Café en Grano" />
               </div>
               <div className="landing__service-body">
                 <h3>Café en Grano al Gusto</h3>

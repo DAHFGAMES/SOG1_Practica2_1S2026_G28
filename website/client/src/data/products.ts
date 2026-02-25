@@ -6,8 +6,8 @@ export const products: Product[] = [
     name: 'Café Soluble',
     description: 'Café soluble de alta calidad, listo para preparar en segundos. Ideal para quienes buscan practicidad sin sacrificar el sabor auténtico guatemalteco.',
     price: 45.00,
-    image: '/assets/01_soluble.jpeg',
-    secondaryImage: '/assets/02_soluble.webp',
+    image: import.meta.env.BASE_URL + 'assets/01_soluble.jpeg',
+    secondaryImage: import.meta.env.BASE_URL + 'assets/02_soluble.webp',
     origin: 'Guatemala',
   },
   {
@@ -15,8 +15,8 @@ export const products: Product[] = [
     name: 'Café en Grano al Gusto',
     description: 'Granos selectos tostados artesanalmente. Preparamos tu café en grano según tu preferencia: molido fino, medio o grueso para la experiencia perfecta.',
     price: 85.00,
-    image: '/assets/01_grano.webp',
-    secondaryImage: '/assets/02_grano.jpeg',
+    image: import.meta.env.BASE_URL + 'assets/01_grano.webp',
+    secondaryImage: import.meta.env.BASE_URL + 'assets/02_grano.jpeg',
     origin: 'Tierras Altas de Guatemala',
   },
 ];
