@@ -8,7 +8,7 @@ export default function Landing() {
 
   return (
     <div className="landing">
-      {/* Hero — parallax background */}
+
       <section className="landing__hero">
         <div className="landing__hero-overlay" />
         <div className="landing__hero-content">
