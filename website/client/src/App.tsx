@@ -1,5 +1,5 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import { CartProvider } from './context/CartContext';
+import { CartProvider } from './context/CartProvider';
 import Header from './components/organisms/Header';
 import Footer from './components/organisms/Footer';
 import Landing from './pages/Landing';

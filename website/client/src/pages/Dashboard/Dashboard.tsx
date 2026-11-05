@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Card from '../../components/atoms/Card';
 import Button from '../../components/atoms/Button';
@@ -14,32 +14,13 @@ const paymentLabels: Record<string, string> = {
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  const [orders, setOrders] = useState<OrderRecord[]>([]);
-  const [stats, setStats] = useState<Stats | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setOrders(fetchOrders());
-    setStats(fetchStats());
-    setLoading(false);
-  }, []);
+  const [orders] = useState<OrderRecord[]>(fetchOrders);
+  const [stats] = useState<Stats>(fetchStats);
 
   const handleLogout = () => {
     navigate('/admin');
   };
 
-  if (loading) {
-    return (
-      <div className="dashboard">
-        <Card className="dashboard__loading" padding="48px">
-          <svg className="dashboard__loading-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/>
-          </svg>
-          <p>Cargando datos...</p>
-        </Card>
-      </div>
-    );
-  }
 
   return (
     <div className="dashboard">
